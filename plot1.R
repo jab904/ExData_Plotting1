@@ -1,0 +1,9 @@
+setwd("C:/Users/JEB/Desktop/Coursera")
+file<-read.csv("household_power_consumption.txt",
+               sep=";", na.strings="?")
+dates<-subset(file, file$Date=="1/2/2007" | file$Date=="2/2/2007")
+hist(dates$Global_active_power, col="red",
+     main="Global Active Power",
+     xlab="Global Active Power (kilowatts)" )
+dev.copy(png, file="plot1.png")
+dev.off()
